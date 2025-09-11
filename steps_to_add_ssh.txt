@@ -1,0 +1,42 @@
+🚀 7 Easy Steps
+
+📌 STEP 1: Check Existing SSH Keys
+🔑 STEP 2: Generate ED25519 SSH Keys
+🚀 STEP 3: Add SSH Keys to the Agent
+🔗 STEP 4: Add SSH Keys to GitHub
+⚙️ STEP 5: Configure SSH for Multiple Accounts
+🔵 STEP 6: Test SSH Connection
+💡 STEP 7: Use Different Accounts for Different Repositories
+
+
+
+
+
+
+step2:
+  ssh-keygen -t ed25519 -C "sk@konic.net"
+step3:
+   eval "$(ssh-agent -s)"
+                       
+
+                       ssh-add ~/.ssh/id_wor0k
+                       ssh-add ~/id_personal
+
+
+step5:
+   
+
+   Host github.com-personal
+    HostName github.com
+    User git
+    IdentityFile ~/id_personal
+
+# Work GitHub
+Host github.com-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_work
+
+
+step6:
+  ssh -T git@github.com-work
