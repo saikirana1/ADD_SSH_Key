@@ -40,3 +40,113 @@ Host github.com-work
 
 step6:
   ssh -T git@github.com-work
+
+
+
+
+
+------------------>
+
+
+
+Perfect 🚀 You’re setting up multiple SSH keys to manage different GitHub accounts — like a personal and work one.
+
+Let’s go through all steps (with corrected commands) so you can execute them safely and successfully 👇
+
+🧩 STEP 1 — Check Existing SSH Keys
+ls -al ~/.ssh
+
+
+👉 This lists all SSH keys you already have.
+
+🔑 STEP 2 — Generate SSH Keys
+
+Generate two keys, one for work and one for personal.
+
+# Work key
+ssh-keygen -t ed25519 -C "sk@konic.net" -f ~/.ssh/id_work
+
+# Personal key
+ssh-keygen -t ed25519 -C "your_personal_email@example.com" -f ~/.ssh/id_personal
+
+
+When asked for a passphrase, you can press Enter (no passphrase) or set one if you want extra security.
+
+🚀 STEP 3 — Add SSH Keys to the Agent
+
+Start the agent and add both keys:
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_work
+ssh-add ~/.ssh/id_personal
+
+
+✅ To confirm the keys are added:
+
+ssh-add -l
+
+🔗 STEP 4 — Add SSH Keys to GitHub
+
+Now copy each public key and add it to the respective GitHub account.
+
+cat ~/.ssh/id_work.pub
+cat ~/.ssh/id_personal.pub
+
+
+Copy each key’s content and go to:
+
+GitHub Work Account → Settings → SSH and GPG Keys → New SSH key
+
+GitHub Personal Account → Settings → SSH and GPG Keys → New SSH key
+
+⚙️ STEP 5 — Configure SSH for Multiple Accounts
+
+Open your SSH config file:
+
+nano ~/.ssh/config
+
+
+Paste the following:
+
+# Personal GitHub
+Host github.com-personal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_personal
+
+# Work GitHub
+Host github.com-work
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_work
+
+
+Save and exit (Ctrl + O, Enter, Ctrl + X).
+
+🔵 STEP 6 — Test Connections
+ssh -T git@github.com-work
+ssh -T git@github.com-personal
+
+
+You should see something like:
+
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+
+💡 STEP 7 — Use Correct Account per Repository
+
+When cloning repos, use the matching Host name:
+
+# Work repo
+git clone git@github.com-work:your-work-username/work-repo.git
+
+# Personal repo
+git clone git@github.com-personal:your-username/personal-repo.git
+
+
+To verify which key a repo uses:
+
+git remote -v
+
+
+✅ Done!
+You can now push and pull from multiple GitHub accounts without authentication conflicts.
