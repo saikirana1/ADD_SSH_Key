@@ -1,1 +1,14 @@
-
+step 1
+install python
+2
+curl -LsSf https://astral.sh/uv/install.sh | sh
+3)
+for project uv add
+4)
+for install alredy 
+uv sync
+5) run the server
+ uv run uvicorn index:app --reload
+6)activate and install virtual env
+      python3 -m venv venv 
+      source venv/bin/activate   
