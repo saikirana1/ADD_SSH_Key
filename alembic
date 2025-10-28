@@ -1,1 +1,4 @@
-
+uv add alembic
+uv init migrations
+alembic revision --autogenerate -m "account number not unique"
+alembic upgrade head
