@@ -12,3 +12,10 @@ uv sync
 6)activate and install virtual env
       python3 -m venv venv 
       source venv/bin/activate   
+
+
+for fast api
+  1) uv init
+  2) uv add 
+  3)source .venv/bin/activate
+  4)uv run uvicorn index:app --reload
