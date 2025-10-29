@@ -3,3 +3,19 @@ uv init migrations
 alembic revision --autogenerate -m "account number not unique"
 alembic upgrade head
  alembic stamp head
+
+
+
+Example:
+
+alembic downgrade -1
+
+
+You can also go back multiple steps:
+
+alembic downgrade -2
+
+
+or go back to a specific version:
+
+alembic downgrade 1234abcd5678
