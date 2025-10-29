@@ -19,3 +19,17 @@ alembic downgrade -2
 or go back to a specific version:
 
 alembic downgrade 1234abcd5678
+
+
+
+Command	Description	Usage
+alembic init alembic	Create Alembic environment	First setup
+alembic revision -m "msg"	Create empty migration	Manual changes
+alembic revision --autogenerate -m "msg"	Auto-generate migration	When model changes
+alembic upgrade head	Apply all migrations	Update DB
+alembic downgrade -1	Undo last migration	Rollback
+alembic current	Show current DB version	Check status
+alembic history	List all migrations	Track versions
+alembic stamp head	Mark DB as up-to-date	If DB already exists
+alembic heads	Show latest version	Check top revision
+alembic merge	Merge branches	Resolve conflicts
