@@ -1,3 +1,5 @@
 Concept Name	FastAPI Keyword	Description	Example
 --->Dependency Injection	Depends	To inject reusable logic (auth, DB connection, etc.) into endpoints	token: str = Depends(verify_token)
 ----->Query Parameters	Query	To define and validate query parameters from the URL	search: str = Query(None, min_length=3)
+uv run uvicorn index:app --reload
+source .venv/bin/activate
