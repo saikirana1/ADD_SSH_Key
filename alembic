@@ -1,5 +1,6 @@
 uv add alembic
-uv init migrations
+
+alembic init db_migrations
 alembic revision --autogenerate -m "account number not unique"
 alembic upgrade head
  alembic stamp head
