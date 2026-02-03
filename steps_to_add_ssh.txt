@@ -154,3 +154,6 @@ STEP 8
    git config user.name "saikirana1"
    git config user.email "kasukurthisaikrain89@gmail.com"
 
+
+How To Check 
+    git config user.email 
