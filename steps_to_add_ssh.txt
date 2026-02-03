@@ -148,6 +148,9 @@ To verify which key a repo uses:
 git remote -v
 
 
-✅ Done!
-You can now push and pull from multiple GitHub accounts without authentication conflicts.
-git remote set-url origin git@github.com-work:konic-technologies/aftercrop.git
+STEP 8
+
+   git remote set-url origin git@github-personal:saikirana1/Web-Socket.git
+   git config user.name "saikirana1"
+   git config user.email "kasukurthisaikrain89@gmail.com"
+
