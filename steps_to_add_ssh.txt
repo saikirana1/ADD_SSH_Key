@@ -157,3 +157,9 @@ STEP 8
 
 How To Check 
     git config user.email 
+
+if you are working in the multiple accounts then use this for cloning
+   Use THIS — not HTTPS:
+git clone git@github-tec:Asad-333/bluetide.git
+
+
