@@ -34,3 +34,28 @@ alembic history	List all migrations	Track versions
 alembic stamp head	Mark DB as up-to-date	If DB already exists
 alembic heads	Show latest version	Check top revision
 alembic merge	Merge branches	Resolve conflicts
+
+
+if you make any mistake just do it 
+(Background on this error at: https://sqlalche.me/e/20/f405)
+(backend) ➜  backend git:(T-1) ✗ alembic current
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+be000b901da8
+(backend) ➜  backend git:(T-1) ✗ alembic history
+be000b901da8 -> b2e9c1e2a65e (head), create the equipment table
+203ea918f85d -> be000b901da8, create the project table
+<base> -> 203ea918f85d, create the file table
+(backend) ➜  backend git:(T-1) ✗ alembic current
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+be000b901da8
+(backend) ➜  backend git:(T-1) ✗ alembic current
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+be000b901da8 (head)
+(backend) ➜  backend git:(T-1) ✗ alembic history
+203ea918f85d -> be000b901da8 (head), create the project table
+<base> -> 203ea918f85d, create the file table
+(backend) ➜  backend git:(T-1) ✗
+head adn database should be same
