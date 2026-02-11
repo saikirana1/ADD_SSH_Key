@@ -17,5 +17,5 @@ here see build and dist
  npm run preview:worker
 
 5) 
- npx wrangler pages deploy dist
+npm run deploy:worker
 
