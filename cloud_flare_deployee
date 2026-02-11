@@ -6,3 +6,16 @@ npm install wrangler
 name = "Teclusion.ai"
 compatibility_date = "2024-10-23"
 assets = { directory = "build" }
+here see build and dist
+
+3) Add in packages.json
+      
+   "preview:worker": "npm run build && wrangler dev",
+"deploy:worker": "npm run build && wrangler deploy"
+4)
+  then run the 
+ npm run preview:worker
+
+5) 
+ npx wrangler pages deploy dist
+
