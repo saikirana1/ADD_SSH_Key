@@ -1,0 +1,8 @@
+npm install wrangler
+
+2) 
+
+ add the this wrangole.tomal file
+name = "Teclusion.ai"
+compatibility_date = "2024-10-23"
+assets = { directory = "build" }
