@@ -1,0 +1,11 @@
+npm install prisma @prisma/client
+
+npm install -D typescript ts-node @types/node dotenv
+
+
+npx prisma init
+
+
+
+
+npx prisma migrate dev --name add_user_plan_material
